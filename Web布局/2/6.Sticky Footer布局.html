@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 主要应用：Flex项目（孩子）中main使用属性：flex：1 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+      }
+
+      body > main {
+        padding: 20px;
+        background-color: aquamarine;
+      }
+
+      header,
+      footer {
+        display: flex;
+        justify-content: center;
+        background-color: pink;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+
+      main {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>页头</h1>
+    </header>
+    <main>
+      <h2>Sticky Footer布局</h2>
+      <p>
+        页脚（Footer）的位置会随着页头（Header）和主内容（Content）高度而变化，但当页头和主内容的内容较小，其高度总和小于浏览器视窗高度时，页脚要始终位于浏览器视窗底部。
+      </p>
+    </main>
+    <footer>
+      <h1>页尾</h1>
+    </footer>
+  </body>
+</html>

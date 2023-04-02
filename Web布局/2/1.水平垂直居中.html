@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 主要应用： flex-direction: column; -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        display: flex; /* inline-flex */
+        margin: 10px auto 10px;
+        width: 300px;
+        height: 300px;
+        justify-content: center;
+        align-items: center;
+      }
+
+      /* 单行水平垂直居中 */
+      /* 横向一行排列 */
+      .container--single {
+        background-color: rgb(95, 95, 235);
+        /* justify-content: center;
+        align-items: center; */
+      }
+
+      /* 多行水平垂直居中 */
+      /* 纵向多行排列 */
+      .container--multiple {
+        background-color: yellow;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container container--single">
+      <div>
+        <p>现代Web布局</p>
+        <p>222现代Web布局</p>
+      </div>
+    </div>
+
+    <div class="container container--multiple">
+      <p>现代Web布局</p>
+      <p>多行水平垂直居中</p>
+    </div>
+  </body>
+</html>

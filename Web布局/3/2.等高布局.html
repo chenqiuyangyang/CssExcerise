@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 主要应用：grid容器上使用：align-items: stretch; 
+                  grid-auto-flow: column; 
+    -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .box {
+        /* 这里也可以改为grid  怎么改呢？ */
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        text-align: center;
+        font-size: 30px;
+      }
+      header {
+        line-height: 30px;
+        background: pink;
+      }
+      .content {
+        display: grid;
+        grid-auto-flow: column;
+      }
+      nav {
+        order: -1;
+        background-color: blue;
+        width: 100px;
+      }
+      main {
+        background-color: yellow;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="box">
+      <header>页头</header>
+      <div class="content">
+        <main>
+          主要内容 Lorem ipsum dolor sit amet consectetur adipisicing elit.
+          Temporibus harum velit earum dignissimos vero est? Labore, impedit
+          molestiae maxime fuga voluptate natus architecto? Rem, suscipit velit
+          est iure possimus totam?
+        </main>
+        <nav>菜单栏</nav>
+      </div>
+    </div>
+  </body>
+</html>

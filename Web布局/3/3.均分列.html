@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 主要应用：Grid容器使用
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr)); 
+        //grid-template-columns 表示：？？？
+        // repeat() 表示：  并且在flex中是不适用的
+        //定义了网格轨道的尺寸是 minmax(0, 1fr) ，最小小到 0 ，最大大到 1fr ，
+        //其中每一个 fr 相当于把网格容器的可用空间（除去所有列间距总和）均分成四份，每列拿了一个等份。
+    -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      nav {
+        display: grid;
+        grid-template-columns: repeat(6, minmax(0, 1fr));
+      }
+
+      a {
+        font-size: 30px;
+        text-decoration: none;
+        text-align: center;
+      }
+      nav a:nth-child(odd) {
+        background: pink;
+      }
+      nav a:nth-child(even) {
+        background: goldenrod;
+      }
+    </style>
+  </head>
+  <body>
+    <nav>
+      <a href="#">1</a>
+      <a href="#">2</a>
+      <a href="#">3</a>
+      <a href="#">4</a>
+      <a href="#">5</a>
+      <a href="#">6</a>
+    </nav>
+  </body>
+</html>

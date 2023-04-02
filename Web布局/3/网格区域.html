@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        color: #fff;
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        place-content: center;
+        padding: 2rem;
+        gap: 2rem;
+      }
+
+      .container {
+        border-radius: 1px;
+      }
+
+      .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 10px;
+        background-color: #f7f7f7;
+        color: #444;
+        font-size: 1.2rem;
+      }
+
+      .item:nth-child(1) {
+        background-color: #f1c2c6;
+      }
+
+      .item:nth-child(2) {
+        background-color: #dac2f1;
+      }
+
+      .grid__item:nth-child(3) {
+        background-color: #ccf1c2;
+      }
+
+      .item:nth-child(4) {
+        background-color: #c2e9f1;
+      }
+
+      .item:nth-child(5) {
+        background-color: #f1ebc2;
+      }
+
+      .container {
+        display: grid;
+      }
+      /* 方法一： */
+      /* 使用 grid-template-areas 命名网格区域 */
+      .container:nth-child(1) {
+        grid-template-areas:
+          "header  header  header"
+          "aside   main    nav"
+          "footer  footer  footer";
+      }
+
+      /* 根据网格区域名称放置网格项目 */
+      .container:nth-child(1) .header {
+        grid-area: header;
+      }
+
+      .container:nth-child(1) .aside {
+        grid-area: aside;
+      }
+
+      .container:nth-child(1) .main {
+        grid-area: main;
+      }
+
+      .container:nth-child(1) .nav {
+        grid-area: nav;
+      }
+
+      .container:nth-child(1) .footer {
+        grid-area: footer;
+      }
+
+      /* 方法二： */
+      /* 使用 grid-template-columns 定义一个网格, 由网格线隐式（网格区域没有名称，根据网格线的索引来创建）创建网格区域 */
+      .container:nth-child(2) {
+        grid-template-columns: 150px 1fr 150px;
+      }
+
+      .container:nth-child(2) .header {
+        grid-area: 1 / 1 / 2 / 4;
+      }
+
+      .container:nth-child(2) .main {
+        grid-area: 2 / 2 / 3 / 3;
+      }
+
+      .container:nth-child(2) .aside {
+        grid-area: 2 / 1 / 3 / 2;
+      }
+
+      .container:nth-child(2) .footer {
+        grid-area: 3 / 1 / 4 / 4;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="container">
+      <header class="item header">Header Area</header>
+      <main class="item main">Main Area</main>
+      <nav class="item nav">Nav Area</nav>
+      <aside class="item aside">Aside Area</aside>
+      <footer class="item footer">Footer Area</footer>
+    </div>
+    <div class="container">
+      <header class="item header">Header Area</header>
+      <main class="item main">Main Area</main>
+      <nav class="item nav">Nav Area</nav>
+      <aside class="item aside">Aside Area</aside>
+      <footer class="item footer">Footer Area</footer>
+    </div>
+  </body>
+</html>

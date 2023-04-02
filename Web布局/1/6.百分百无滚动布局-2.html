@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        /* display: flex;
+        justify-content: center;
+        align-items: center; */
+      }
+
+      .main-container {
+        z-index: 99;
+        position: fixed;
+
+        right: 20vw;
+        left: 20vw;
+        bottom: 0;
+        top: 10vh;
+
+        display: flex;
+        flex-direction: column;
+      }
+
+      .fixed-container {
+        height: 100px;
+        padding: 20px;
+        background-color: red;
+        color: white;
+      }
+
+      .content-wrapper {
+        display: flex;
+        flex: 1;
+        min-height: 0;
+      }
+
+      .overflow-container {
+        flex: 1;
+        overflow-y: auto;
+      }
+
+      .overflow-content {
+        height: 2000px;
+        background-color: #ddd;
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="main-container">
+      <div class="fixed-container">Header：固定尺寸</div>
+      <div class="content-wrapper">
+        <div class="overflow-container">
+          <div class="overflow-content">
+            <p>内容</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

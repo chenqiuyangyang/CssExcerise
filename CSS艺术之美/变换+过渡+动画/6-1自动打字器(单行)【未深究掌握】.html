@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        position: relative;
+        margin-top: 100px;
+        margin-left: 100px;
+      }
+
+      .text__box {
+        position: relative;
+        overflow: hidden;
+        width: 0;
+        font-size: 32px;
+        line-height: 34px;
+        font-family: "Courier New", Courier, monospace;
+        white-space: nowrap;
+        animation: width 2s steps(13) forwards;
+        /* 名称、持续时间、缓动函数、播放前后其效果是否可见（在动画结束后保持最后一个属性(在最后一个关键帧中定义)） */
+      }
+      .text__box::after {
+        content: "";
+        position: absolute;
+        right: 0px;
+        height: 32px;
+        border-right: 1px solid #000;
+        animation: showInfinite 0.5s infinite both;
+        /* 名称、持续时间、播放次数（infinite无限次）、播放前后其效果是否可见（向前与向后填充模式都被应用） */
+      }
+      .one {
+        animation-delay: 0s;
+      }
+
+      @keyframes width {
+        0% {
+          width: 0;
+        }
+        100% {
+          width: 13em;
+          /* 单位em,表示一个字体的宽度 */
+        }
+      }
+      @keyframes showInfinite {
+        0% {
+          opacity: 1;
+        }
+        100% {
+          opacity: 0;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 思路
+    1.实现步骤：
+    将文本框属性设置为等宽字体，计算文本框的字数，设置文字大小、相对布局等。
+    将文本框隐藏，通过动画改变文本框宽度，动画速度曲线使用css内置函数steps()变成步长动画，然后将动画模式设置为forwards,保留动画最后一帧样式。
+    使用伪元素after，设置边框属性和绝对布局，模拟光标；再使用动画实现若隐若现效果。
+    2.代码：
+    这里是用改变宽度和步长动画搭配实现效果。宽度单位是em，数值根据这行文字的多少来计算。 -->
+
+    <div class="container">
+      <div class="text__box one">这是一个打字机效果1！！！</div>
+      <!-- <div class="text__box two">这是一个打字机效果2！！！</div>
+        <div class="text__box three">这是一个打字机效果3！！！</div>
+        <div class="text__box four">这是一个打字机效果4！！！</div> -->
+    </div>
+  </body>
+</html>

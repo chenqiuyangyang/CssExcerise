@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        background-color: #fff;
+        color: #fff;
+        background-color: #978484;
+      }
+
+      main {
+        background: #fff;
+        position: relative;
+        z-index: 1;
+      }
+
+      header,
+      footer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 60px;
+        background-color: #f90;
+      }
+
+      header h1 {
+        margin: 0;
+      }
+
+      body {
+        height: 100vh;
+        overflow-y: hidden; /* 这个很重要 */
+        display: grid;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+          "header"
+          "main"
+          "footer";
+        row-gap: 10px;
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      main {
+        grid-area: main;
+        overflow-y: auto; /* 这个很重要 */
+      }
+
+      main > div {
+        height: 1000px;
+        background-color: pink;
+      }
+
+      footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <header>固定在页面顶部</header>
+    <main><div>主内容区域，内多过多时出现垂直滚动条</div></main>
+    <footer>固定在页面底部</footer>
+  </body>
+</html>

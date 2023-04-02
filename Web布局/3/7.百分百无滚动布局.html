@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #f90;
+        color: #f90;
+      }
+
+      body > * {
+        background-color: #fff;
+        padding: 0.5em 1.5em;
+      }
+
+      h3 + p {
+        margin-top: 1rem;
+      }
+
+      main {
+        overflow-x: auto;
+      }
+
+      body {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr) 220px;
+        grid-template-rows: auto minmax(0, 1fr);
+        gap: 0.125em;
+        grid-template-areas:
+          "header header header"
+          "aside  main   nav";
+      }
+
+      header {
+        grid-area: header;
+      }
+
+      aside {
+        grid-area: aside;
+      }
+
+      main {
+        grid-area: main;
+        /* overflow-x: auto;
+        white-space: nowrap; */
+      }
+
+      nav {
+        grid-area: nav;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>现代 Web 布局</h1>
+    </header>
+    <aside>
+      <h3>侧边栏</h3>
+      <p>固定尺寸</p>
+    </aside>
+    <main>
+      <h3>弹性尺寸</h3>
+      <p>
+        主内容列的宽度将根据浏览器视窗宽度自动调整，同时它也占用了网格容器剩余的空间
+        <!-- 111111111111111111111111111l Lorem ipsum dolor, sit amet consectetur
+        adipisicing elit. Quisquam odit voluptates nihil est molestias sapiente
+        sit amet voluptatem officia facilis, at tempora dolores libero
+        distinctio placeat quo! Maiores, repudiandae alias! -->
+      </p>
+    </main>
+    <nav>
+      <h3>侧边栏</h3>
+      <p>固定尺寸</p>
+    </nav>
+  </body>
+</html>

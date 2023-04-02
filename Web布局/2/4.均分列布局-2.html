@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no"
+    />
+    <title>Document</title>
+    <link
+      rel="stylesheet"
+      href="http://at.alicdn.com/t/font_3376732_p4n3bwje1s9.css"
+    />
+    <!-- 主要应用：Flex项目（孩子）中使用flex:1; -->
+    <!-- 均分列的应用实例：移动端页面底部的菜单栏 -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      html,
+      body {
+        height: 100%;
+      }
+      body {
+        display: flex;
+        flex-direction: column;
+      }
+      header,
+      footer {
+        height: 60px;
+      }
+      header {
+        background-color: red;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+      main {
+        flex: 1;
+      }
+      footer {
+        background-color: #ddd;
+        display: flex;
+      }
+      footer > figure {
+        /* 等分列的第一种方法 */
+        /* width: 25%;
+          height: 100%; */
+
+        /* 等分列的第二种方法 */
+        flex: 1;
+
+        /* 菜单项图标和文字的布局 */
+        text-align: center;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+      }
+      footer > figure > .iconfont {
+        font-size: 24px;
+      }
+    </style>
+  </head>
+  <body>
+    <header></header>
+    <main></main>
+    <footer>
+      <figure>
+        <span class="iconfont icon-shouye"></span>
+        <figcaption>首页</figcaption>
+      </figure>
+      <figure>
+        <span class="iconfont icon-24gl-fileText"></span>
+        <figcaption>分类</figcaption>
+      </figure>
+      <figure>
+        <span class="iconfont icon-xihuan"></span>
+        <figcaption>喜欢</figcaption>
+      </figure>
+      <figure>
+        <span class="iconfont icon-geren"></span>
+        <figcaption>我的</figcaption>
+      </figure>
+    </footer>
+  </body>
+</html>

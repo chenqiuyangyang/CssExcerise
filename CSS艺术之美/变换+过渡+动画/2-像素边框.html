@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .onepx-border {
+        width: 200px;
+        height: 80px;
+        cursor: pointer;
+        line-height: 80px;
+        text-align: center;
+        font-weight: bold;
+        font-size: 50px;
+        color: #f66;
+      }
+      .onepx-border {
+        margin-top: 10px;
+      }
+      .onepx-border.normal {
+        border: 1px solid #f66;
+      }
+      .onepx-border.thin {
+        position: relative;
+      }
+      .onepx-border::after {
+        position: absolute;
+        left: 0;
+        top: 0;
+        border: 1px solid #f66;
+        width: 200%;
+        height: 200%;
+        content: "";
+        transform: scale(0.5);
+        transform-origin: left top;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- 再通过声明transform:scale(.5)将该伪元素缩小到原来的0.5倍，现在与节点尺寸一样了，而border也通过浏览器自动计算成0.5px了，最终实现0.5px边框 -->
+    <div class="bruce flex-ct-y" data-title="使用transform描绘像素边框">
+      <div class="onepx-border normal">1px</div>
+      <div class="onepx-border thin">0.5px</div>
+    </div>
+  </body>
+</html>

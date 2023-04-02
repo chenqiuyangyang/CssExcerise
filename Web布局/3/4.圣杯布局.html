@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--主要应用：
+        1.Grid容器使用属性：
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr) 220px;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+          "header        header   header"
+          "left-aside    main     right-aside"
+          "footer        footer   footer";
+        2.Grid项目使用属性：   属性的解释？？？？？？
+        grid-area: header;
+    -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        min-height: 100vh;
+        background-color: #f90;
+        color: #fff;
+      }
+
+      body > * {
+        background-color: #fff;
+        color: #f90;
+      }
+
+      header,
+      footer {
+        padding: 1vw 20px;
+        font-size: 0.8rem;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      h2 + p {
+        margin-top: 1rem;
+        line-height: 1.65;
+        font-size: 0.8em;
+      }
+
+      /* 布局主要实现部分*/
+      body {
+        display: grid;
+        grid-template-columns: 220px minmax(0, 1fr) 220px;
+        grid-template-rows: auto minmax(0, 1fr) auto;
+        grid-template-areas:
+          "header        header   header"
+          "left-aside    main     right-aside"
+          "footer        footer   footer";
+        gap: 2px;
+      }
+
+      .header {
+        grid-area: header;
+      }
+
+      .main {
+        grid-area: main;
+      }
+
+      .left-aside {
+        grid-area: left-aside;
+      }
+
+      .right-aside {
+        grid-area: right-aside;
+      }
+
+      .footer {
+        grid-area: footer;
+      }
+    </style>
+  </head>
+  <body>
+    <header class="header">
+      <h1>页头</h1>
+    </header>
+    <main class="main">
+      <h2>现代 Web 布局技术</h2>
+      <p>
+        其主要特征，一个三列布局（即：两边宽度固定，中间宽度自适应的三栏布局），且主内容先行（即：中间主内容放在文档流前面以优先渲染，让用户在
+        Web 页面加载缓慢时，就能先看到主内容）。
+      </p>
+    </main>
+    <aside class="left-aside">
+      <h3>左侧边栏</h3>
+    </aside>
+    <aside class="right-aside">
+      <h3>右侧边栏</h3>
+    </aside>
+    <footer class="footer">
+      <h1>页尾</h1>
+    </footer>
+  </body>
+</html>

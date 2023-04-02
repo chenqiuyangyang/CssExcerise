@@ -1,0 +1,47 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+html,
+body {
+  height: 100%;
+}
+body {
+  display: flex;
+  flex-direction: column;
+}
+header,
+footer {
+  height: 60px;
+}
+header {
+  background-color:red;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+main {
+  flex: 1;
+  /* background-color: yellow; */
+  display: flex;
+  overflow: auto;
+}
+footer {
+  background-color: #ddd;
+  display: flex;
+}
+footer > figure {
+  width: 25%;
+  height: 100%;
+  /* background-color: red; */
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+}
+footer > figure:hover {
+  color: #f66;
+}
+footer > figure > .iconfont {
+  font-size: 24px;
+}

@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 主要应用：
+    1.aspect-ratio 可以根据 宽高比 和 高度 的值计算出 宽度的值
+    2.Flex容器(父亲)使用display:flex 
+    -->
+    <!--虽然使用 Flexbox 可以构建一个网格布局，但用它来构建九宫格布局效果，还是有一定的局限性，需要通过 HTML 结构强力配合才能实现。    -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      .container {
+        margin: auto;
+      }
+
+      .item:nth-child(1) {
+        background-color: #8917bd;
+      }
+      .item:nth-child(2) {
+        background-color: #f46;
+      }
+
+      .item:nth-child(3) {
+        background-color: #a69;
+      }
+
+      .container {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+      }
+
+      .row {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .item {
+        height: 200px;
+        aspect-ratio: 3 / 2;
+      }
+
+      /* aspect-ratio可以根据 宽高比 和 高度 的值计算出 宽度的值 */
+      /* aspect-ratio = width ÷ height = 3 ÷ 2 = 1.5
+      width = height × aspect-ratio = 200 x (3 ÷ 2) = 300 */
+      .aspectRatio {
+        /* height: 400px; */
+        width: 300px;
+        aspect-ratio: 3 / 2; /*宽/高*/
+        background-color: pink;
+        margin: 10px auto;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="row">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+
+      <div class="row">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+
+      <div class="row">
+        <div class="item"></div>
+        <div class="item"></div>
+        <div class="item"></div>
+      </div>
+    </div>
+    <div class="aspectRatio"></div>
+  </body>
+</html>

@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      ul {
+        list-style: none;
+      }
+
+      .media {
+        margin: 100px auto;
+        display: flex;
+        align-items: center;
+        background: #6b4cbf;
+        padding: 1rem;
+        /* 【这里为什么这样写？】 */
+        width: min(100%, 700px);
+        /* width: 700px; */
+        gap: 1.5rem;
+      }
+
+      .media__object {
+        width: 10rem;
+        aspect-ratio: 1;
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-color: pink;
+      }
+
+      .media__content {
+        flex: 1;
+        min-width: 0;
+      }
+
+      .media__title {
+        width: 100%;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        margin-bottom: 1rem;
+      }
+
+      .badges {
+        display: flex;
+        gap: 0.5rem;
+      }
+
+      .badges li {
+        display: inline-block;
+        padding: 0.32em 0.7em;
+        font-size: 0.83em;
+        font-weight: 400;
+        background-color: #ff8100;
+        border-radius: 0.25rem;
+      }
+
+      .media .badges {
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        width: 100%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="media">
+      <div class="media__object">
+        <p>头像</p>
+      </div>
+      <div class="media__content">
+        <h3 class="media__title">昵称：123456</h3>
+        <ul class="badges">
+          <li>技术</li>
+          <li>大数据</li>
+          <li>前端</li>
+          <li>Java</li>
+          <li>MySql</li>
+          <li>Go</li>
+          <li>CSS3</li>
+          <li>TypeScript</li>
+          <li>HTML5</li>
+        </ul>
+      </div>
+    </div>
+  </body>
+</html>

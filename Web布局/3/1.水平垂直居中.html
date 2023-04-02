@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!-- 主要应用： 
+        flex-direction: grid;
+        align-items: center; // 网格容器所有网格【项目】沿着块轴（列轴）方向垂直居中
+        justify-items: center; // 网格容器所有网格【项目】沿着内联轴（行轴）方向水平垂直居中
+        align-content: center; // 网格轨道沿着块轴方向垂直居中 
+        justify-content: center; // 网格轨道沿着内联轴方向水平居中 
+     -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        margin: 10px auto 10px;
+        width: 300px;
+        height: 300px;
+      }
+
+      /* 单行水平垂直居中 */
+      /* 横向一行排列 */
+      .container--single {
+        background-color: rgb(95, 95, 235);
+        display: grid;
+        align-items: center;
+        justify-items: center;
+      }
+
+      /* .container--single {
+        background-color: rgb(95, 95, 235);
+        display: grid;
+        align-content: center;
+        justify-content: center;
+      } */
+
+      /* 多行水平垂直居中 */
+      /* 纵向多行排列 */
+      .container--multiple {
+        background-color: yellow;
+        display: grid;
+        align-content: center;
+        justify-content: center;
+        justify-items: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container container--single">
+      <div>
+        <p>现代Web布局</p>
+      </div>
+    </div>
+
+    <div class="container container--multiple">
+      <p>现代Web布局</p>
+      <p>多行水平垂直居中</p>
+    </div>
+  </body>
+</html>

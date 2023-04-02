@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <!--主要应用：Flex项目（孩子）使用属性：order：-1,flex:1  还有gap的应用  -->
+    <!--圣杯布局的应用实例：微博网页版    -->
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+
+      body {
+        width: 100vw;
+        height: 100vh;
+        background-color: #f90;
+      }
+
+      header,
+      footer,
+      aside,
+      article {
+        background-color: #fff;
+        color: #f90;
+      }
+
+      header,
+      footer {
+        padding: 1vw 20px;
+        font-size: 0.8rem;
+        display: flex;
+        justify-content: center;
+      }
+
+      aside,
+      article {
+        padding: 20px;
+      }
+
+      body {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+      }
+
+      /* 布局主要实现部分 */
+      main {
+        flex: 1;
+        display: flex;
+        gap: 1px;
+      }
+
+      aside:nth-of-type(1) {
+        order: -1;
+        width: 100px;
+      }
+
+      aside:nth-of-type(2) {
+        width: 100px;
+      }
+
+      article {
+        flex: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <h1>页头</h1>
+    </header>
+    <main>
+      <article>
+        <h2>圣杯布局是一种经典的 Web布局技术。</h2>
+        <h3>
+          其主要特征，一个三列布局（即：两边宽度固定，中间宽度自适应的三栏布局），且主内容先行（即：中间主内容放在文档流前面以优先渲染，让用户在
+          Web 页面加载缓慢时，就能先看到主内容）。
+        </h3>
+      </article>
+      <aside>
+        <h3>左侧边栏</h3>
+      </aside>
+      <aside>
+        <h3>右侧边栏</h3>
+      </aside>
+    </main>
+    <footer>
+      <h1>页尾</h1>
+    </footer>
+  </body>
+</html>

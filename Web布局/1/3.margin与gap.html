@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        margin: 0;
+        padding: 0;
+      }
+      .container {
+        background: #ffffff;
+        border: 3px solid #88978a;
+        margin: 100px auto;
+      }
+
+      .flex__item {
+        background: #e8f0fe;
+        border: 2px solid #2938e9;
+        color: #000;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        aspect-ratio: 1;
+      }
+
+      .flex__item:nth-child(2) {
+        background-color: #efe1ff;
+      }
+
+      .flex__item:nth-child(3) {
+        background-color: #bbd7af;
+      }
+
+      .flex__item:nth-child(4) {
+        background-color: #ecbbbb;
+      }
+
+      .flex__item:nth-child(5) {
+        background-color: #00f0ff;
+      }
+
+      .container {
+        width: 280px;
+        background-color: rgba(255, 55, 120, 0.2);
+      }
+
+      .flex__container {
+        display: flex;
+        flex-flow: row wrap;
+      }
+
+      .flex__container--margin > .flex__item {
+        margin: 1rem;
+      }
+
+      .flex__container--gap {
+        gap: 1rem;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="form"></div>
+    <div class="container">
+      <div class="flex__container flex__container--margin" data-gutter="margin">
+        <div class="flex__item">Flex Item 1</div>
+        <div class="flex__item">Flex Item 2</div>
+      </div>
+    </div>
+    <div class="container">
+      <div class="flex__container flex__container--gap" data-gutter="gap">
+        <div class="flex__item">Flex Item 1</div>
+        <div class="flex__item">Flex Item 2</div>
+      </div>
+    </div>
+  </body>
+</html>
